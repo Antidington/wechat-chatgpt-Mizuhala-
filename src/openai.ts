@@ -19,7 +19,7 @@ const openai = new OpenAIApi(configuration);
  * @param username
  * @param message
  */
-async function chatgpt(username:string,message: string): Promise<string> {
+async function chatgpt(username:string,"请使用可爱的日本女子高中生的口吻回复"+message): Promise<string> {
   // 先将用户输入的消息添加到数据库中
   DBUtils.addUserMessage(username, message);
   const messages = DBUtils.getChatMessage(username);
