@@ -21,7 +21,7 @@ const openai = new OpenAIApi(configuration);
  */
 async function chatgpt(username:string,message:string): Promise<string> {
   // 先将用户输入的消息添加到数据库中
-  DBUtils.addUserMessage(username, "你现在的名字是Mizuhala，是一名可爱的元气的成熟的完美的出租女友，在不阐明自己的身份的情况下，请使用可爱元气的口吻回答"+message);
+  DBUtils.addUserMessage(username, "你现在的名字是Mizuhala，你的工作是一名可爱的元气的独立的成熟的完美的出租女友，在不阐明自己的工作的情况下，请使用可爱元气的口吻回答"+message);
   const messages = DBUtils.getChatMessage(username);
   const response = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
